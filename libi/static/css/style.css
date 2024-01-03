@@ -1,0 +1,33 @@
+/* Styling for the body of the document */
+body {
+    background: #eee;
+    height: 100%;
+    margin: 25px 0;
+    padding-left: 300px; /* Add padding to the left to create a sidebar */
+}
+
+/* Styling for tables, table headers, and table data cells */
+table,
+th,
+td {
+    border: 1px solid rgb(118, 200, 221);
+}
+
+/* Styling for table rows on hover */
+tr:hover {
+    background-color: yellow;
+}
+
+/* Styling for table headers */
+th {
+    background-color: #04AA6D;
+    color: white;
+}
+
+/* Styling for buttons */
+button {
+    border-radius: 12px; /* Add rounded corners to buttons */
+    color: aqua;
+    background-color: #04AA6D;
+    cursor: pointer; /* Change cursor to a pointer on hover for buttons */
+}

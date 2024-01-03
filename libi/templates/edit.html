@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update records</title>
+    <!-- Load the static CSS file for styling -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <!-- Create a form with POST method to update book records -->
+    <form method="POST" action="/update/{{book.ISBN}}">
+        <!-- CSRF token for security -->
+        {% csrf_token %}
+        <div>
+            <br>
+            <p>
+                <h3>Update Details</h3>
+            </p>
+        </div>
+        <div>
+            <p>Book ISBN:</p>
+            <div>
+                <!-- Display the current ISBN value and allow modification -->
+                <input type="text" name="ISBN" value="{{book.ISBN}}"/>
+            </div>
+        </div>
+        <div>
+            <p>Book Title:</p>
+            <div>
+                <!-- Display the current title value and allow modification -->
+                <input type="text" name="title" value="{{book.title}}"/>
+            </div>
+        </div>
+        <div>
+            <p>Book Author:</p>
+            <div>
+                <!-- Display the current author value and allow modification -->
+                <input type="text" name="author" value="{{book.author}}"/>
+            </div>
+        </div>
+        <div>
+            <br>
+            <!-- Add a button to submit the form for updating -->
+            <button type="submit">Update</button>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+    <!-- Load and link the external stylesheet for styling -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <!-- Create a table to display the list of books -->
+    <table>
+        <thead>
+            <!-- Table header with column names -->
+            <tr>
+                <th>Book ISBN</th>
+                <th>Book Title</th>
+                <th>Book Author</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+             <!-- Iterate through the list of books and display each book's information -->
+            {% for book in books %}
+            <tr>
+                <!-- Display the ISBN, title, and author of the book -->
+                <td>{{book.ISBN}}</td>
+                <td>{{book.title}}</td>
+                <td>{{book.author}}</td>
+                <!-- Provide links to edit and delete actions for each book -->
+                <td>
+                    <a href="/edit/{{book.ISBN}}">Edit</a>
+                    <a href="/delete/{{book.ISBN}}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <!-- Add a button to navigate to the page for adding a new record -->
+    <a href="/index">
+    <button >Add New Record</button></a>
+</body>
+</html>

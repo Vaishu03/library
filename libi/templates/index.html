@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add books</title>
+    <!-- Load static files, here a CSS file named 'style.css' -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <!-- Form to submit book details -->
+    <form method="POST" action="/index">
+        <!-- CSRF token for security -->
+        {% csrf_token %}
+        <div>
+            <br>
+            <p>
+                <h3>Enter Details: </h3>
+            </p>
+
+            <!-- Input field for Book ISBN -->
+            <div>
+                <p>Book ISBN:</p>{{ form.ISBN }}
+            </div>
+
+            <!-- Input field for Book Title -->
+            <div>
+                <p>Book Title:</p>{{ form.title }}
+            </div>
+
+            <!-- Input field for Book Author -->
+            <div>
+                <p>Book Author:</p>{{ form.author }}
+            </div>
+
+            <!-- Submit button to submit the form -->
+            <div>
+                <br>
+                <button type="submit">Submit</button>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
